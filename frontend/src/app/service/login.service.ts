@@ -17,7 +17,7 @@ export class LoginService {
       return  this.http.post('http://localhost:8080/login',user)
       .map((response: Response) => {
         let user = response.json();
-        console.log("no user ret");
+        console.log("user returned");
         return user;
       })
       .catch(e => {
@@ -31,7 +31,7 @@ export class LoginService {
 
   logout(){
     this.http.post('http://localhost:8080/logout',{});
-    this.router.navigateByUrl('login');
+    this.router.navigateByUrl('');
   }
 
   isLoogedIn(){

@@ -7,24 +7,23 @@ var userSchema = mongoose.Schema({
 
         email        : String,
         password     : String,
-    
     facebook         : {
-        id           : String,
-        token        : String,
-        email        : String,
-        name         : String
-    },
-    twitter          : {
-        id           : String,
-        token        : String,
-        displayName  : String,
-        username     : String
+        id           : { type : String , default : 0},
+        token        : { type : String , default : 0},
+        email        : { type : String , default : ''},
+        name         : { type : String , default : 'No NAME'}
     },
     google           : {
-        id           : String,
-        token        : String,
-        email        : String,
-        name         : String
+        id           : { type : String , default : 0},
+        token        : { type : String , default : 0},
+        email        : { type : String , default : ''},
+        img         : { type : String , default : 'No img'}
+    },
+    linkedIn           : {
+        id           : { type : String , default : 0},
+        token        : { type : String , default : 0},
+        email        : { type : String , default : ''},
+        name         : { type : String , default : 'No NAME'}
     }
 
 });

@@ -7,12 +7,12 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AppComponent } from './app.component';
 import { NgModule } from '@angular/core';
 import { Routes,RouterModule } from "@angular/router";
+import { AuthorizeComponent } from './authorize/authorize.component';
 
 const appRoutes : Routes=[
-    { path: 'login' , canActivate:[DirectGuard],component : UserLoginComponent },
+    { path: '' , canActivate:[DirectGuard],component : AuthorizeComponent },
     { path: 'profile' ,canActivate:[AuthGaurd], component : UserProfileComponent },
     { path: 'dummy'  , component : DummyComponent},
-    { path: 'signup' , component : UserSignupComponent }
   ];
 
 

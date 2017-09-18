@@ -11,8 +11,7 @@ import { User } from '../models/user.model';
 
 @Component({
   selector: 'app-user-login',
-  templateUrl: './user-login.component.html',
-  styleUrls: ['./user-login.component.css']
+  templateUrl: './user-login.component.html'
 })
 export class UserLoginComponent implements OnInit {
 
@@ -25,7 +24,7 @@ export class UserLoginComponent implements OnInit {
               private  loginService : LoginService) {}
 
   ngOnInit() {
-    console.log("Component called again");
+ //   console.log("Component called again");
   }
 
   login(){
@@ -40,6 +39,7 @@ export class UserLoginComponent implements OnInit {
                   {   console.log(user);
                       this.loggeduser = user;
                       Cookie.set('session',user._id);
+                      Cookie.set('type','user');
                       this.router.navigateByUrl('profile');
                   }, 
                   (err) => 

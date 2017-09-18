@@ -12,7 +12,6 @@ import { User } from '../models/user.model';
 @Component({
   selector: 'app-user-signup',
   templateUrl: './user-signup.component.html'
- // styleUrls: ['./user-signup.component.css']
 })
 export class UserSignupComponent implements OnInit {
 
@@ -42,6 +41,7 @@ export class UserSignupComponent implements OnInit {
                   {   console.log(user);
                       this.loggeduser = user;
                       Cookie.set('session',user._id);
+                      Cookie.set('type','user');
                       this.router.navigateByUrl('profile');
                   }, 
                   (err) => 

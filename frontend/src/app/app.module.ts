@@ -17,6 +17,15 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { LoginService } from './service/login.service';
 import { DummyComponent } from './dummy/dummy.component';
 import { UserSignupComponent } from './user-signup/user-signup.component';
+import { GoogleSigninComponent } from './google-login/google-login.component';
+import { enableProdMode} from '@angular/core';
+import { LinkedinComponent } from './linkedin/linkedin.component';
+import { LinkedInSdkModule } from 'angular-linkedin-sdk';
+import { AuthorizeComponent } from './authorize/authorize.component';
+import { IntercompService } from './service/intercomp.service';
+import { GoogleLoginService } from './service/google-login.service';
+
+enableProdMode();
 
 @NgModule({
   declarations: [
@@ -24,15 +33,25 @@ import { UserSignupComponent } from './user-signup/user-signup.component';
     UserLoginComponent,
     UserProfileComponent,
     DummyComponent,
-    UserSignupComponent
+    UserSignupComponent,
+    GoogleSigninComponent,
+    LinkedinComponent,
+    AuthorizeComponent,
     ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    LinkedInSdkModule,
   ],
-  providers: [LoginService,SignupService,AuthGaurd,DirectGuard],
+
+  providers: [ LoginService,SignupService,
+               AuthGaurd,DirectGuard,IntercompService,
+               GoogleLoginService,
+               { provide: 'apiKey', useValue: '78q9jktjl5ag3m' }
+              ],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

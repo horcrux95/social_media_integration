@@ -12,14 +12,14 @@ export class AuthGaurd implements CanActivate {
                 state : RouterStateSnapshot) 
                 : Observable<boolean> | Promise<boolean> | boolean
                  {
-                        console.log(Cookie.get('session'));
-                        console.log("coming from url" +this.router.url);
+                       // console.log(Cookie.get('session'));
+                       // console.log("coming from url" +this.router.url);
                        
                         if(Cookie.get('session')){
                             return true;
                         }
                         else{
-                            this.router.navigate(['/login']);
+                            this.router.navigate(['']);
                         }
                     
                 
